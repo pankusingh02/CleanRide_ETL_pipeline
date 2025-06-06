@@ -10,7 +10,7 @@ logger = get_logger("Transformer")
 
 def transform_sales_data(df: pd.DataFrame)-> pd.DataFrame:
     logger.info(f'Starting the Transformer')
-    if not check_dataframe():
+    if not check_dataframe(df):
         raise ValueError ("Input data validation failed")
     
     df=df.copy()
@@ -21,6 +21,6 @@ def transform_sales_data(df: pd.DataFrame)-> pd.DataFrame:
     df['tpep_dropoff_datetime']= pd.to_datetime(df['tpep_dropoff_datetime'])
 
     #Adding new columns
-    df['trip_duration_minutes']=(df['tpep_dropoff_datetime']-df['tpep_pickup_datetime']).dt.total_seconds/60
+    df['trip_duration_minutes']=(df['tpep_dropoff_datetime']-df['tpep_pickup_datetime']).dt.total_seconds()/60
     logger.info("Transformation complete. Final record count: {}".format(len(df)))
     return df

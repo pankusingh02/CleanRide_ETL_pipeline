@@ -1,6 +1,6 @@
 #Validates that data is present and not broken
 
-from logger import get_logger
+from utils.logger import get_logger
 
 logger=get_logger("Monitor")
 
