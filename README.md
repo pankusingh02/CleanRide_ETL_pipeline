@@ -18,28 +18,6 @@ A simple, modular ETL pipeline built in Python to extract taxi sales data from P
 
 ---
 
-## Project Structure
-
-CleanRide_ETL_Pipeline/
-├── data/                   # Raw data files (Parquet, SQLite DB)
-├── extract/
-│   ├── parquet_reader.py   # Read data from Parquet files
-│   └── sql_reader.py       # Read data from SQL databases
-├── transform/
-│   └── sales_transformer.py # Clean & transform sales data
-├── load/
-│   └── csv_writer.py       # Save DataFrame to CSV file
-├── utils/
-│   ├── logger.py           # Custom logging setup
-│   ├── monitor.py          # Data validation & monitoring helpers
-│   └── alert.py            # Email alerting on failure
-├── tests/                  # Unit tests for each module
-├── main.py                 # Main ETL pipeline orchestration script
-├── run_etl.sh              # Shell script to run pipeline (for cron)
-└── README.md               # Project overview & instructions
-
----
-
 ## Prerequisites
 
 - Python 3.7 or higher  
